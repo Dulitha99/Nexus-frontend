@@ -10,7 +10,7 @@ const Conversations = () => {
         <Conversation
           key={conversation._id}
           conversation={conversation}
-          lastMessageTime={conversation.lastMessageTime} // Assuming conversations have a lastMessageTime property
+          lastMessageTime={conversation.lastMessageTime} 
           lastIdx={idx === conversations.length - 1}
         />
       ))}

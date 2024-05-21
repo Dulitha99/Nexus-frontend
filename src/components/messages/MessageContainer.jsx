@@ -11,7 +11,6 @@ const MessageContainer = () => {
   const { authUser } = useAuthContext();
 
   useEffect(() => {
-    
     return () => setSelectedConversation(null);
   }, [setSelectedConversation]);
 
@@ -34,7 +33,7 @@ const MessageContainer = () => {
                 </div>
               </div>
               <span className="font-bold">
-                {selectedConversation?.fullName}
+                {selectedConversation?.username}
               </span>
             </div>
             <div className="flex gap-4">
