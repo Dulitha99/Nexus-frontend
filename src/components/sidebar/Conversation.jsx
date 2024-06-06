@@ -1,20 +1,12 @@
 import { useSocketContext } from "../../context/SocketContext";
 import useConversation from "../../zustand/useConversation";
-import { format } from "date-fns";
 
-const Conversation = ({ conversation, lastIdx, lastMessageTime }) => {
+const Conversation = ({ conversation, lastIdx, lastMessage }) => {
   const { selectedConversation, setSelectedConversation } = useConversation();
   const { onlineUsers } = useSocketContext();
 
   const isSelected = selectedConversation?._id === conversation._id;
   const isOnline = onlineUsers.includes(conversation._id);
-
-  let formattedTime = "Invalid Date";
-  try {
-    formattedTime = format(new Date(lastMessageTime), "p"); // Format the time using date-fns
-  } catch (error) {
-    console.error("Error formatting date:", error);
-  }
 
   return (
     <>
@@ -33,8 +25,8 @@ const Conversation = ({ conversation, lastIdx, lastMessageTime }) => {
         <div className="flex flex-col flex-1">
           <div className="flex gap-3 justify-between">
             <p className="font-bold text-gray-200">{conversation.username}</p>
-            <span className="text-xs text-gray-400">{formattedTime}</span>
           </div>
+          <p className="text-sm text-gray-400 truncate">{lastMessage}</p>
         </div>
       </div>
 

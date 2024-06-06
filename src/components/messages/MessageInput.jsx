@@ -11,11 +11,11 @@ const MessageInput = () => {
   const { selectedConversation } = useConversation();
 
   useEffect(() => {
-    async function loadToxicityModel() {
+    const loadToxicityModel = async () => {
       const threshold = 0.9;
       const model = await toxicity.load(threshold);
       setToxicityModel(model);
-    }
+    };
     loadToxicityModel();
   }, []);
 
@@ -25,8 +25,10 @@ const MessageInput = () => {
 
     const sentences = [message];
     const predictions = await toxicityModel.classify(sentences);
-    const isToxic = predictions[6].results[0].match;
-    console.log(predictions[6].results[0].match);
+    const isToxic = predictions.some((prediction) =>
+      prediction.results.some((result) => result.match)
+    );
+
     if (isToxic) {
       alert("Toxic message detected! Message not sent.");
       setMessage("");

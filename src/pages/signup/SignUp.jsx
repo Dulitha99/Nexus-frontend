@@ -6,16 +6,11 @@ import "./Signup.css";
 
 const SignUp = () => {
   const [inputs, setInputs] = useState({
-    firstName: "",
-    lastName: "",
     username: "",
     password: "",
     confirmPassword: "",
     gender: "male",
-    dateOfBirth: "",
-    country: "",
     email: "",
-    mobileNo: "",
   });
   const [passwordError, setPasswordError] = useState("");
   const [formError, setFormError] = useState("");
@@ -71,44 +66,6 @@ const SignUp = () => {
           )}
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label
-                  htmlFor="firstName"
-                  className="block text-sm font-medium text-black"
-                >
-                  First Name
-                </label>
-                <input
-                  type="text"
-                  id="firstName"
-                  value={inputs.firstName}
-                  onChange={(e) =>
-                    setInputs({ ...inputs, firstName: e.target.value })
-                  }
-                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-white text-black"
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="lastName"
-                  className="block text-sm font-medium text-black"
-                >
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  id="lastName"
-                  value={inputs.lastName}
-                  onChange={(e) =>
-                    setInputs({ ...inputs, lastName: e.target.value })
-                  }
-                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-white text-black"
-                  required
-                />
-              </div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
               <div>
                 <label
                   htmlFor="username"
@@ -188,44 +145,6 @@ const SignUp = () => {
                 />
               </div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-              <div>
-                <label
-                  htmlFor="dateOfBirth"
-                  className="block text-sm font-medium text-black"
-                >
-                  Date of Birth
-                </label>
-                <input
-                  type="date"
-                  id="dateOfBirth"
-                  value={inputs.dateOfBirth}
-                  onChange={(e) =>
-                    setInputs({ ...inputs, dateOfBirth: e.target.value })
-                  }
-                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-white text-black"
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="country"
-                  className="block text-sm font-medium text-black"
-                >
-                  Country
-                </label>
-                <input
-                  type="text"
-                  id="country"
-                  value={inputs.country}
-                  onChange={(e) =>
-                    setInputs({ ...inputs, country: e.target.value })
-                  }
-                  className="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-white text-black"
-                  required
-                />
-              </div>
-            </div>
             <div className="mt-4">
               <label
                 htmlFor="email"
@@ -239,24 +158,6 @@ const SignUp = () => {
                 value={inputs.email}
                 onChange={(e) =>
                   setInputs({ ...inputs, email: e.target.value })
-                }
-                className="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-white text-black"
-                required
-              />
-            </div>
-            <div className="mt-4">
-              <label
-                htmlFor="mobileNo"
-                className="block text-sm font-medium text-black"
-              >
-                Mobile No.
-              </label>
-              <input
-                type="text"
-                id="mobileNo"
-                value={inputs.mobileNo}
-                onChange={(e) =>
-                  setInputs({ ...inputs, mobileNo: e.target.value })
                 }
                 className="mt-1 block w-full p-2 border border-gray-300 rounded-md bg-white text-black"
                 required
