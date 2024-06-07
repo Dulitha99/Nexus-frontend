@@ -47,7 +47,7 @@ const SignUp = () => {
     }
     try {
       await signup(inputs);
-      navigate("/welcomepage");
+      navigate("/");
     } catch (error) {
       setFormError("Signup failed. Please try again.");
     }
