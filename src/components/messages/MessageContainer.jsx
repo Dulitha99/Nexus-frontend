@@ -61,7 +61,7 @@ const NoChatSelected = ({ authUser }) => {
     <div className="flex items-center justify-center w-full h-full">
       <div className="px-4 text-center sm:text-lg md:text-xl text-[#31304D] font-semibold flex flex-col items-center gap-2">
         <img src={Logo} alt="App Logo" className="w-24 h-24 mb-4 logo" />
-        <p>Welcome {authUser.fullName} ❄</p>
+        <p>Welcome {authUser.username}</p>
         <p>Select a chat to start messaging</p>
       </div>
     </div>

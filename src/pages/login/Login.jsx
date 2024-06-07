@@ -120,7 +120,7 @@ const Login = () => {
               Forgot Password?
             </button>
           </p>
-          <p className="mt-2 text-sm">
+          <p className="mt-2 text-sm  text-black">
             {"Don't have an account? "}
             <Link to="/signup" className="text-blue-600 hover:underline">
               Sign Up
